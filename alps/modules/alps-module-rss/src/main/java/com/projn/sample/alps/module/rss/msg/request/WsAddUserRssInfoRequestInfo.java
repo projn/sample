@@ -5,7 +5,6 @@ import com.projn.alps.msg.filter.ParamLocationType;
 import com.projn.sample.alps.module.rss.msg.request.type.AddUserRssInfoRequestInfo;
 
 /**
- * 
  * @author : auto
  */
 public class WsAddUserRssInfoRequestInfo {

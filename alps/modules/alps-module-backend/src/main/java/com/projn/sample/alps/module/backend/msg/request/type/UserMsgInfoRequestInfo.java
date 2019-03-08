@@ -3,7 +3,6 @@ package com.projn.sample.alps.module.backend.msg.request.type;
 import com.alibaba.fastjson.annotation.JSONField;
 
 /**
- * 
  * @author : auto
  */
 public class UserMsgInfoRequestInfo {

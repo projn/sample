@@ -60,7 +60,7 @@ public class SendSamlpeMsgJob implements Job {
         String topic = "normal_msg";
         MsgRequestInfo msgRequestInfo = new MsgRequestInfo();
         UserMsgInfoStructInfo userMsgInfoStructInfo = new UserMsgInfoStructInfo();
-        userMsgInfoStructInfo.setUserId(System.currentTimeMillis()+"");
+        userMsgInfoStructInfo.setUserId(System.currentTimeMillis() + "");
         msgRequestInfo.setMsg(userMsgInfoStructInfo);
 
         String tag = "200";

@@ -3,7 +3,6 @@ package com.projn.sample.alps.module.console.struct;
 import com.alibaba.fastjson.annotation.JSONField;
 
 /**
- * 
  * @author : auto
  */
 public class UserMsgInfoStructInfo {

@@ -1,7 +1,6 @@
 package com.projn.sample.alps.module.rss.msg.response;
 
 /**
- * 
  * @author : auto
  */
 public class WsAddUserRssInfoResponseInfo {

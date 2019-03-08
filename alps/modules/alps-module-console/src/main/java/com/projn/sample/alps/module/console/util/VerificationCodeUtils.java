@@ -6,14 +6,28 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class VerificationCodeUtils {
+/**
+ * verification code utils
+ *
+ * @author : sunyuecheng
+ */
+public final class VerificationCodeUtils {
 
     private static int codeX = 15;
-    private static  int codeY = 16;
-    private static char[] codeSequence = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
-            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+    private static int codeY = 16;
+    private static char[] codeSequence = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
-    public static Map<String,Object> generateCodeAndPicture(int width, int height, int codeCount, int fontHeight) {
+    /**
+     * generate code and picture
+     *
+     * @param width      :
+     * @param height     :
+     * @param codeCount  :
+     * @param fontHeight :
+     * @return Map<String, Object> :
+     */
+    public static Map<String, Object> generateCodeAndPicture(int width, int height, int codeCount, int fontHeight) {
         // 定义图像buffer
         BufferedImage buffImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         // Graphics2D gd = buffImg.createGraphics();
@@ -64,11 +78,14 @@ public class VerificationCodeUtils {
             // 将产生的四个随机数组合在一起。
             randomCode.append(code);
         }
-        Map<String,Object> map  =new HashMap<String,Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
         //存放验证码
         map.put("code", randomCode);
         //存放生成的验证码BufferedImage对象
         map.put("codePic", buffImg);
         return map;
+    }
+
+    private VerificationCodeUtils() {
     }
 }

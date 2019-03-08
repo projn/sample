@@ -1,12 +1,10 @@
 package com.projn.sample.alps.module.console.msg.request;
 
-import com.projn.alps.msg.filter.ParamLimit;
 import com.projn.alps.msg.filter.ParamLocation;
 import com.projn.alps.msg.filter.ParamLocationType;
 import com.projn.sample.alps.module.console.msg.request.type.LoginRequestInfo;
 
 /**
- * 
  * @author : auto
  */
 public class HttpLoginRequestInfo {

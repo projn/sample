@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * 处理广播消息
+ *
  * @author : auto
  */
 @Component("DealUserBroadcastMsgInfoServiceImpl")

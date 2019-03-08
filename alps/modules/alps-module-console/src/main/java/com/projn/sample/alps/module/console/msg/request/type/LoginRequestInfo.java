@@ -4,7 +4,6 @@ import com.alibaba.fastjson.annotation.JSONField;
 import com.projn.alps.msg.filter.ParamLimit;
 
 /**
- * 
  * @author : auto
  */
 public class LoginRequestInfo {

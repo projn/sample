@@ -17,6 +17,7 @@ import static com.projn.alps.exception.code.CommonErrorCode.RESULT_SYSTEM_INTER_
 
 /**
  * 提交用户头像
+ *
  * @author : auto
  */
 @Component("UploadUserHeadImageInfoServiceImpl")
@@ -37,8 +38,8 @@ public class UploadUserHeadImageInfoServiceImpl implements IComponentsHttpServic
         MultipartFile file = httpUploadUserHeadImageInfoRequestInfo.getFile();
         String fileName = file.getOriginalFilename();
 
-        String filePath = "./"+fileName + System.currentTimeMillis();
-        try{
+        String filePath = "./" + fileName + System.currentTimeMillis();
+        try {
             FileUtils.writeFileByByte(filePath, file.getBytes(), false);
         } catch (Exception e) {
             LOGGER.error("Save file error, file name({}), error info({}).",

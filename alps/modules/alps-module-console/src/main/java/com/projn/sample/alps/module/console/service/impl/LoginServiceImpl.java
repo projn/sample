@@ -24,6 +24,7 @@ import static com.projn.alps.define.CommonDefine.ONE_YEAR_SECOND;
 
 /**
  * 用户登录
+ *
  * @author : auto
  */
 @Component("LoginServiceImpl")
@@ -41,13 +42,13 @@ public class LoginServiceImpl implements IComponentsHttpService {
     public HttpResponseInfo execute(HttpRequestInfo httpRequestInfo) throws HttpException {
         HttpResponseInfo httpResponseInfo = new HttpResponseInfo();
 
-        if(httpRequestInfo == null || httpRequestInfo.getParamObj() ==null) {
+        if (httpRequestInfo == null || httpRequestInfo.getParamObj() == null) {
             LOGGER.error("Error param.");
             throw new HttpException(HttpStatus.BAD_REQUEST.value(), CommonErrorCode.RESULT_INVAILD_PARAM_ERROR);
         }
 
         //Do not check request param,use the annotation '@ParamLimit'
-        HttpLoginRequestInfo httpLoginRequestInfo = (HttpLoginRequestInfo)httpRequestInfo.getParamObj();
+        HttpLoginRequestInfo httpLoginRequestInfo = (HttpLoginRequestInfo) httpRequestInfo.getParamObj();
         LoginRequestInfo loginRequestInfo = httpLoginRequestInfo.getLoginRequestInfo();
 
         HttpLoginResponseInfo httpLoginResponseInfo = new HttpLoginResponseInfo();
@@ -77,7 +78,7 @@ public class LoginServiceImpl implements IComponentsHttpService {
             jwtToken = JwtTokenUtils.createToken("test", claimMap, "projn", "Server",
                     ONE_YEAR_SECOND, "tokenKey");
         } catch (Exception e) {
-            LOGGER.error("Create jwt token error,error info("+e.getMessage()+").");
+            LOGGER.error("Create jwt token error,error info(" + e.getMessage() + ").");
             throw new HttpException(HttpStatus.INTERNAL_SERVER_ERROR.value(), CommonErrorCode.RESULT_SYSTEM_INTER_ERROR);
         }
 

@@ -5,7 +5,6 @@ import com.projn.alps.msg.filter.ParamLocationType;
 import com.projn.sample.alps.module.backend.msg.request.type.UserMsgInfoRequestInfo;
 
 /**
- * 
  * @author : auto
  */
 public class MsgDealUserBroadcastMsgInfoRequestInfo {

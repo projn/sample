@@ -16,6 +16,7 @@ import java.util.Map;
 
 /**
  * 添加用户订阅
+ *
  * @author : auto
  */
 @Component("AddUserRssInfoServiceImpl")
@@ -26,14 +27,16 @@ public class AddUserRssInfoServiceImpl implements IComponentsWsService {
     public WsResponseInfo execute(WsRequestInfo wsRequestInfo) {
         WsResponseInfo wsResponseInfo = new WsResponseInfo();
 
-        if(wsRequestInfo == null || wsRequestInfo.getParamObj() ==null) {
+        if (wsRequestInfo == null || wsRequestInfo.getParamObj() == null) {
             LOGGER.error("Error param.");
             return null;
         }
 
         //Do not check request param,use the annotation '@ParamLimit'
-        WsAddUserRssInfoRequestInfo wsAddUserRssInfoRequestInfo = (WsAddUserRssInfoRequestInfo)wsRequestInfo.getParamObj();
-        AddUserRssInfoRequestInfo addUserRssInfoRequestInfo = wsAddUserRssInfoRequestInfo.getAddUserRssInfoRequestInfo();
+        WsAddUserRssInfoRequestInfo wsAddUserRssInfoRequestInfo
+                = (WsAddUserRssInfoRequestInfo) wsRequestInfo.getParamObj();
+        AddUserRssInfoRequestInfo addUserRssInfoRequestInfo
+                = wsAddUserRssInfoRequestInfo.getAddUserRssInfoRequestInfo();
 
         LOGGER.info("Msg({}).", JSON.toJSONString(addUserRssInfoRequestInfo));
 

@@ -6,7 +6,6 @@ import com.projn.alps.msg.filter.ParamLocationType;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * 
  * @author : auto
  */
 public class HttpUploadUserHeadImageInfoRequestInfo {

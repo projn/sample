@@ -5,7 +5,6 @@ import com.projn.alps.msg.filter.ParamLocation;
 import com.projn.alps.msg.filter.ParamLocationType;
 
 /**
- * 
  * @author : auto
  */
 public class HttpLogoutRequestInfo {
