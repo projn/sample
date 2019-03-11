@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <modules_config>
-    <api_file_path>/you/path/projn/sample/alps/generator/sample-v2.yaml</api_file_path>
+    <api_file_path>/you/path/to/projn/sample/alps/generator/sample-v2.yaml</api_file_path>
     <api_version>2</api_version>>
     <jdbc_config>
         <driver_class>org.mariadb.jdbc.Driver</driver_class>
@@ -12,7 +12,7 @@
     <parent_group_id>com.projn.sample</parent_group_id>
     <parent_artifact_id>alps</parent_artifact_id>
 
-    <output_dir>/you/path/projn/sample</output_dir>
+    <output_dir>/you/path/to/projn/sample</output_dir>
     <recover_exist>true</recover_exist>
 
     <module_config>
