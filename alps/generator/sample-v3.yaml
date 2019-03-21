@@ -177,6 +177,13 @@ components:
           type: integer
           format: int64
           description: 注册时间
+        extend_info:
+          $ref: '#/components/schemas/UserExtendInfoResponseInfo'
+    UserExtendInfoResponseInfo:
+      type: object
+      properties:
+        remark:
+          type: string
 
     AddUserRssInfoRequestInfo:
       type: object

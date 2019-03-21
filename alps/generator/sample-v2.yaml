@@ -199,6 +199,13 @@ definitions:
         type: integer
         format: int64
         description: 注册时间
+      extend_info:
+        $ref: '#/definitions/UserExtendInfoResponseInfo'
+  UserExtendInfoResponseInfo:
+    type: object
+    properties:
+      remark:
+        type: string
 
   AddUserRssInfoRequestInfo:
     type: object

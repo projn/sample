@@ -1,8 +1,10 @@
 package com.projn.sample.alps.module.console.msg.response;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.projn.sample.alps.module.console.msg.response.type.UserExtendInfoResponseInfo;
 
 /**
+ * 
  * @author : auto
  */
 public class HttpLoginResponseInfo {
@@ -33,6 +35,9 @@ public class HttpLoginResponseInfo {
      */
     @JSONField(name = "register_time")
     private Long registerTime;
+
+    @JSONField(name = "extend_info")
+    private UserExtendInfoResponseInfo extendInfo;
 
     public String getAccount() {
         return account;
@@ -72,5 +77,13 @@ public class HttpLoginResponseInfo {
 
     public void setRegisterTime(Long registerTime) {
         this.registerTime = registerTime;
+    }
+
+    public UserExtendInfoResponseInfo getExtendInfo() {
+        return extendInfo;
+    }
+
+    public void setExtendInfo(UserExtendInfoResponseInfo extendInfo) {
+        this.extendInfo = extendInfo;
     }
 }
