@@ -240,9 +240,17 @@ function install_single()
     dst=${SOFTWARE_REDIS_CLUSTER_PORT_6}
     sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/redis-cluster.properties
 
-    src=SOFTWARE_ROCKETMQ_SERVER_ADDRESS
-    dst=${SOFTWARE_ROCKETMQ_SERVER_ADDRESS}
-    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/rocketmq.properties
+    src=SOFTWARE_KAFKA_CONSUMER_SERVERS
+    dst=${SOFTWARE_KAFKA_CONSUMER_SERVERS}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-consumer.properties
+
+    src=SOFTWARE_KAFKA_CONSUMER_GROUP_ID
+    dst=${SOFTWARE_KAFKA_CONSUMER_GROUP_ID}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-consumer.properties
+
+    src=SOFTWARE_KAFKA_PRODUCER_SERVERS
+    dst=${SOFTWARE_KAFKA_PRODUCER_SERVERS}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-producer.properties
 
     cp ${CURRENT_WORK_DIR}/${SOFTWARE_SERVICE_NAME}-single /etc/init.d/${SOFTWARE_SERVICE_NAME}
 
@@ -400,6 +408,10 @@ function create_cloud_git_config()
     dst=${SOFTWARE_SERVER_PORT}
     sed -i "s#$src#$dst#g" ${CURRENT_WORK_DIR}/git-repo/alpsmicroservice.properties
 
+    src=SOFTWARE_KAFKA_PRODUCER_SERVERS
+    dst=${SOFTWARE_KAFKA_PRODUCER_SERVERS}
+    sed -i "s#$src#$dst#g" ${CURRENT_WORK_DIR}/git-repo/alpsmicroservice.properties
+
     src=SOFTWARE_MYSQL_URL
     dst=${SOFTWARE_MYSQL_URL}
     sed -i "s#$src#$dst#g" ${CURRENT_WORK_DIR}/git-repo/druid.properties
@@ -470,9 +482,17 @@ function create_cloud_git_config()
     dst=${SOFTWARE_REDIS_CLUSTER_PORT_6}
     sed -i "s#$src#$dst#g" ${CURRENT_WORK_DIR}/git-repo/redis-cluster.properties
 
-    src=SOFTWARE_ROCKETMQ_SERVER_ADDRESS
-    dst=${SOFTWARE_ROCKETMQ_SERVER_ADDRESS}
-    sed -i "s#$src#$dst#g" ${CURRENT_WORK_DIR}/git-repo/rocketmq.properties
+    src=SOFTWARE_KAFKA_CONSUMER_SERVERS
+    dst=${SOFTWARE_KAFKA_CONSUMER_SERVERS}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-consumer.properties
+
+    src=SOFTWARE_KAFKA_CONSUMER_GROUP_ID
+    dst=${SOFTWARE_KAFKA_CONSUMER_GROUP_ID}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-consumer.properties
+
+    src=SOFTWARE_KAFKA_PRODUCER_SERVERS
+    dst=${SOFTWARE_KAFKA_PRODUCER_SERVERS}
+    sed -i "s#$src#$dst#g" ${SOFTWARE_INSTALL_PATH}/context/config/kafka-producer.properties
 
     echo "config success."
 

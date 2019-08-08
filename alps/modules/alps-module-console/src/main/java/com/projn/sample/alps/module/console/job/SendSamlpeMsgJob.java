@@ -1,6 +1,6 @@
 package com.projn.sample.alps.module.console.job;
 
-import com.projn.alps.dao.IRocketMqDao;
+import com.projn.alps.dao.IKafkaProducerInfoDao;
 import com.projn.alps.struct.MsgRequestInfo;
 import com.projn.alps.tool.QuartzJobTools;
 import com.projn.sample.alps.module.console.struct.UserMsgInfoStructInfo;
@@ -25,8 +25,8 @@ public class SendSamlpeMsgJob implements Job {
     private static final Logger LOGGER = LoggerFactory.getLogger(SendSamlpeMsgJob.class);
 
     @Autowired
-    @Qualifier("RocketMqDao")
-    private IRocketMqDao rocketMqDao;
+    @Qualifier("KafkaProducerInfoDao")
+    private IKafkaProducerInfoDao kafkaProducerInfoDao;
 
     private Long scanTimeIntervalSeconds = 0L;
 
@@ -64,17 +64,20 @@ public class SendSamlpeMsgJob implements Job {
         msgRequestInfo.setMsg(userMsgInfoStructInfo);
 
         String tag = "200";
-        msgRequestInfo.setId(200);
-        rocketMqDao.sendMsg(topic, tag, msgRequestInfo);
+        msgRequestInfo.setId("200");
+        kafkaProducerInfoDao.sendAsyncMessageInfo(topic, msgRequestInfo);
         topic = "order_msg";
         tag = "201";
-        msgRequestInfo.setId(201);
-        rocketMqDao.sendOrderMsg(topic, tag, 100, msgRequestInfo);
-        topic = "broadcast_msg";
+        msgRequestInfo.setId("201");
+        kafkaProducerInfoDao.sendAsyncMessageInfo(topic, 1, msgRequestInfo);
+        topic = "normal_msg";
         tag = "202";
-        msgRequestInfo.setId(202);
-        rocketMqDao.sendMsg(topic, tag, msgRequestInfo);
+        msgRequestInfo.setId("202");
+        try {
+            kafkaProducerInfoDao.sendSyncMessageInfo(topic, tag, 100L);
+        } catch (Exception e) {
 
+        }
 
         LOGGER.info("Job run.");
 
